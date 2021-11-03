@@ -1,0 +1,32 @@
+{
+	"name": "kitoborui",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"forwardPorts": [
+		8080
+	],
+	"mounts": [
+		"source=kitoborui-bashhistory,target=/home/node/commandhistory,type=volume"
+	],
+	"remoteUser": "node",
+	"settings": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"emmet.includeLanguages": {
+			"vue": "html",
+			"vue-html": "html"
+		},
+		"workbench.iconTheme": "vscode-icons"
+	},
+	"extensions": [
+		"octref.vetur",
+		"dbaeumer.vscode-eslint",
+		"yzhang.markdown-all-in-one",
+		"marquesmps.dockerfile-validator",
+		"streetsidesoftware.code-spell-checker",
+		"vscode-icons-team.vscode-icons"
+	],
+	"postCreateCommand": "yarn install"
+}
